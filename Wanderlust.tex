@@ -1,0 +1,120 @@
+% \documentclass[12pt]{article} 
+\documentclass[a4paper,12pt]{article}
+
+% \documentclass[a4paper,12pt]{report}
+
+\usepackage{color}
+\usepackage{graphicx}
+% \usepackage{mathptmx} 
+\usepackage{anyfontsize}
+% \usepackage{t1enc}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{tabularx}
+
+\usepackage{hyperref} %table of content
+
+\usepackage{datetime}
+% \usepackage{datetime2}
+
+
+
+\usepackage{multicol}
+% table
+\usepackage{tabularx}
+\usepackage{enumitem}
+
+% \usepackage{siunitx}
+
+\usepackage{adjustbox}
+
+
+% font size
+\usepackage{sectsty}
+
+
+
+% table 
+\usepackage[table]{xcolor}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{2}
+\newcolumntype{l}{>{\columncolor{lightgray}} p{4cm}}
+
+
+
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ margin=20mm,
+ left=30mm
+}
+% \usepackage{fontspec}
+% \usepackage{fontenc}
+% \usepackage{Times}
+
+% \setmainfont{Times New Roman}
+% \setromanfont{Times New Roman}
+
+% \title{\textbf{\fontsize{40}{60}\selectfont Wanderlust\\}}
+
+% \author{ Camping Equipment Rental \& Guidance Platform\\}
+
+\sectionfont{\fontsize{18}{22}\selectfont}
+\subsectionfont{\fontsize{16}{20}\selectfont}
+\subsubsectionfont{\fontsize{14}{18}\selectfont}
+
+
+\begin{document}
+
+
+
+\input{Title/index}
+\newpage
+
+\input{Details/index}
+\newpage
+
+\input{Abbreviations/index}
+\newpage
+
+\tableofcontents
+\newpage
+
+\listoffigures
+\newpage
+
+\listoftables
+\newpage
+
+\input{Introduction/index}
+\newpage
+
+\input{Project Goal/index}
+\newpage
+
+\input{Scope/index}
+\newpage
+
+\input{Deliverables/index}
+\newpage
+
+\input{Feasibility/index}
+\newpage
+
+\input{Requirements/intex}
+\newpage
+
+\input{Quality Attributes/index}
+\newpage
+
+\input{Technologies/index}
+\newpage
+
+\input{Timeline/index}
+\newpage
+
+\input{Declaration/index}
+
+
+
+\end{document}

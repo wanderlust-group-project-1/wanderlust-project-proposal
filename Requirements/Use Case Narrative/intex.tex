@@ -1,0 +1,1226 @@
+\subsection{Use Case Narratives}
+
+%\subsubsection*{Use Case: Register}
+\begin{table}[!ht]
+    \centering
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \textbf{Use Case ID} & UC-001 \\
+        \hline
+        \textbf{Use Case Name} & Register \\
+        \hline
+        \textbf{Primary Actor(s)} & Guest User \\
+        \hline
+        \textbf{Description} & Users have to register before logging into the system by adding details to the system. \\
+        \hline
+        \textbf{Pre-Conditions} & Users need to have necessary verifications. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Enter the email address.
+            \item Check if the email already exists.
+            \item Set the password.
+            \item System displays the relevant registration form.
+            \item Enter all the required details.
+            \item Accept the terms and conditions given by the system.
+            \item Show a message saying a verification link will be sent through an email, to verify the account.
+            \item Verify the account using the link.
+            \item System saves data in the database.
+            \item Show message saying complete registration.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & Already registered users, Invalid data entered \\
+        \hline
+        \textbf{Post-conditions} & 
+        \begin{itemize}[label=--,itemsep=0pt]
+            \item Admin is notified in the cases of rental services and guides registrations.
+            \item Admin verifies or rejects the registrations for rental services and guides (Use Case ID \# UC-002).
+            \item Notification of approval/rejection is sent for rental services and guides.
+        \end{itemize} \\
+        \hline
+    \end{tabularx}
+    % \caption{use}
+    \label{tab:use-case-register}
+    \caption{Use Case: Register}
+\end{table}
+
+
+%\section*{Use Case: Login}
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-002 \\
+        \hline
+        \textbf{Use Case Name} & Login \\
+        \hline
+        \textbf{Primary Actor(s)} & User, Rental Services, Guide, Admin \\
+        \hline
+        \textbf{Description} & Users can log in to the system by providing required credentials. \\
+        \hline
+        \textbf{Pre-Conditions} & User must be registered before. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item User enters email to log in.
+            \item If the entered email is valid, prompt for the password.
+            \item If the entered email is invalid, repeat step 1.
+            \item If the entered password is valid, direct to Home page.
+        \end{enumerate} \\
+        \hline
+        \textbf{Alternate Scenario} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item User selects ‘Forgot password’.
+            \item System sends a link to change the password via email.
+            \item System redirects to Use Case ID UC-003.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & Unregistered users \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-login}
+    \caption{Use Case: Login}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-003 \\
+        \hline
+        \textbf{Use Case Name} & Change Password \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin,User, Rental services, Guide \\
+        \hline
+        \textbf{Description} & User changes the existing password to a new one \\
+        \hline
+        \textbf{Pre-Conditions} & User must be logged in to profile \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item User click change password
+            \item User enter current password
+            \item User enter new password
+            \item User Confirm and save password
+        \end{enumerate} \\
+        \hline
+        \textbf{Alternate Scenario} & 
+ \\
+        \hline
+        \textbf{Exceptions} & User can change password if current password enter correctlys \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-login}
+    \caption{Use Case: Change Password}
+\end{table}
+
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-004 \\
+        \hline
+        \textbf{Use Case Name} & Disable/Enable Account \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin \\
+        \hline
+        \textbf{Description} & If the admin wants, they can disable and enable accounts of Rental services and Guides. \\
+        \hline
+        \textbf{Pre-Conditions} & None \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Admin can disable accounts of Rental services and Guides.
+            \item An email is sent to the disabled account-holder to contact the admin if needed.
+            \item Admin can enable the disabled accounts.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The relevant accounts get notified of the status change. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-disable-enable}
+     \caption{Use Case: Disable/Enable Account}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-005 \\
+        \hline
+        \textbf{Use Case Name} & Edit Profile \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin, Rental Service, Guide, User \\
+        \hline
+        \textbf{Description} & Allows users, including Admin, Rental Services, Guides, and Users, to edit their profiles. \\
+        \hline
+        \textbf{Pre-Conditions} & User has to be logged into the system. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item User clicks on "Edit Profile".
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-edit-profile}
+    \caption{Use Case: Edit Profile}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-006 \\
+        \hline
+        \textbf{Use Case Name} & Verify Account \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin \\
+        \hline
+        \textbf{Description} & Verify the accounts of Rental services and Guides after their initial registration. \\
+        \hline
+        \textbf{Pre-Conditions} & Rental services and Guides should register. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item When Guides or Rental Services register, the admin is notified, and their account is kept disabled for the meantime.
+            \item If the admin approves, the account is verified, and it is enabled.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The relevant account holder gets notified of the verification. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-verify-account}
+    \caption{Use Case: Verify Account}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-007 \\
+        \hline
+        \textbf{Use Case Name} & Post Blogs \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer, Guide, Admin \\
+        \hline
+        \textbf{Description} & Allows Customers, Guides, and Admins to post blogs of their journeys. \\
+        \hline
+        \textbf{Pre-Conditions} & Actors are logged into the system. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer, Guide, or Admin clicks on "Post Blog".
+            \item Customer uploads a blog of their journey and submits it.
+            \item Guide or Admin uploads a blog directly.
+            \item Blogs submitted by Customers can be verified by relevant Guide or Admin for higher reliability.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & Customer blogs can be verified by system Admin for higher reliability. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-post-blogs}
+    \caption{Use Case: Post Blogs}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-008 \\
+        \hline
+        \textbf{Use Case Name} & Approve Blogs \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin \\
+        \hline
+        \textbf{Description} & Allows Admin to approve blogs uploaded by Customers. \\
+        \hline
+        \textbf{Pre-Conditions} & Customers have already uploaded blogs. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Admin logs into the system.
+            \item Admin navigates to the list of uploaded blogs.
+            \item Admin reviews the blogs.
+            \item If a Customer requests approval for their blog, Admin approves it.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & Blogs are approved only if the Customer requests for it. \\
+        \hline
+        \textbf{Post-conditions} & Approved blogs are marked as verified in the system. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-approve-blogs}
+    \caption{Use Case: Approve Blogs}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-009 \\
+        \hline
+        \textbf{Use Case Name} & Update Blogs \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin, Guide, Customer \\
+        \hline
+        \textbf{Description} & Allows Admin, Guides, and Customers to update existing blogs. \\
+        \hline
+        \textbf{Pre-Conditions} & Blogs are already uploaded. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Admin, Guide, or Customer logs into the system.
+            \item Admin or Guide navigates to the list of existing blogs and selects a blog to update.
+            \item Customer navigates to their uploaded blogs and selects a blog to update.
+            \item Admin, Guide, or Customer edits the selected blog and saves changes.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & If a Customer updates a blog, they should get approval again. \\
+        \hline
+        \textbf{Post-conditions} & If a Customer updates a blog, it is marked for re-approval by the Admin. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-update-blogs}
+    \caption{Use Case: Update Blogs}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-010 \\
+        \hline
+        \textbf{Use Case Name} & Delete Blogs \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin, Guide, Customer \\
+        \hline
+        \textbf{Description} & Allows Admin, Guides, and Customers to delete existing blogs. \\
+        \hline
+        \textbf{Pre-Conditions} & Blogs are already uploaded. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Admin, Guide, or Customer logs into the system.
+            \item Admin or Guide navigates to the list of existing blogs and selects a blog to delete.
+            \item Customer navigates to their uploaded blogs and selects a blog to delete.
+            \item Admin, Guide, or Customer confirms the deletion action.
+            \item The selected blog is removed from the system.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The selected blog is permanently deleted from the system. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-delete-blogs}
+    \caption{Use Case: Delete Blogs}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-011 \\
+        \hline
+        \textbf{Use Case Name} & View Blogs \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin, Guide, Customer, Rental Service, Guest \\
+        \hline
+        \textbf{Description} & Allows Admin, Guides, Customers, Rental Services, and Guests to view existing blogs. \\
+        \hline
+        \textbf{Pre-Conditions} & Blogs are already uploaded. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Actors log into the system (if applicable).
+            \item Actors navigate to the blog corner or section.
+            \item All actors can browse and view the list of existing blogs.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-view-blogs}
+    \caption{Use Case: View Blogs}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-012 \\
+        \hline
+        \textbf{Use Case Name} & View Main Dashboard \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin \\
+        \hline
+        \textbf{Description} & Allows Admin to view the main dashboard. \\
+        \hline
+        \textbf{Pre-Conditions} & Admin must be logged into the system. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Admin logs into the system.
+            \item Admin navigates to the main dashboard.
+            \item Admin selects and views desired statistics and information from the dashboard.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-view-main-dashboard}
+    \caption{Use Case: View Main Dashboard}
+\end{table}
+
+
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-013 \\
+        \hline
+        \textbf{Use Case Name} & View Dashboard \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin, Guide, Rental Service \\
+        \hline
+        \textbf{Description} & Allows Admin, Guides, and Rental Services to view their respective dashboards. \\
+        \hline
+        \textbf{Pre-Conditions} & None \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Admin, Guide, or Rental Service logs into the system.
+            \item Guide or Rental Service navigates to their personal dashboard.
+            \item Guide or Rental Service checks statistics and relevant information.
+            \item Admin can access and view dashboards of all users.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-view-dashboard}
+    \caption{Use Case: View Dashboard}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-014 \\
+        \hline
+        \textbf{Use Case Name} & Add Packages \\
+        \hline
+        \textbf{Primary Actor(s)} & Guide \\
+        \hline
+        \textbf{Description} & Allows Guide to add packages to their profile. \\
+        \hline
+        \textbf{Pre-Conditions} & Guide is registered and verified. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Guide logs into the system.
+            \item Guide navigates to their profile.
+            \item Guide selects the option to add packages.
+            \item Guide fills in the details of the new package.
+            \item Guide saves the new package to their profile.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-add-packages}
+    \caption{Use Case: Add Packages}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-015 \\
+        \hline
+        \textbf{Use Case Name} & Update Packages \\
+        \hline
+        \textbf{Primary Actor(s)} & Guide \\
+        \hline
+        \textbf{Description} & Allows Guide to update packages and calendar availability in their profile. \\
+        \hline
+        \textbf{Pre-Conditions} & Guide has already uploaded the packages. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Guide logs into the system.
+            \item Guide navigates to their profile.
+            \item Guide selects the option to update packages.
+            \item Guide modifies the details of the existing packages.
+            \item Guide updates the calendar visibility settings if needed.
+            \item Guide saves the changes to their profile.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-update-packages}
+    \caption{Use Case: Update Packages and Calendar availability}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-016 \\
+        \hline
+        \textbf{Use Case Name} & Delete Packages \\
+        \hline
+        \textbf{Primary Actor(s)} & Guide, Admin \\
+        \hline
+        \textbf{Description} & Allows Guide and Admin to delete packages from profiles. \\
+        \hline
+        \textbf{Pre-Conditions} & 
+        \begin{itemize}[itemsep=0pt]
+            \item Guide has already uploaded the packages.
+            \item The particular package is not booked at the moment.
+        \end{itemize} \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Guide logs into the system.
+            \item Guide navigates to their profile.
+            \item Guide selects the option to delete packages.
+            \item Guide chooses the package to be deleted.
+            \item Guide confirms the deletion action.
+            \item The selected package is removed from the guide's profile.
+            \item Admin logs into the system.
+            \item Admin navigates to the guide's profile.
+            \item Admin selects the option to delete packages.
+            \item Admin chooses the package to be deleted.
+            \item Admin confirms the deletion action.
+            \item The selected package is removed from the guide's profile.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-delete-packages}
+    \caption{Use Case: Delete Packages}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-017 \\
+        \hline
+        \textbf{Use Case Name} & View Packages \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer, Guide, Admin, Guest User, Rental Service \\
+        \hline
+        \textbf{Description} & Allows various actors to view packages and calendar availability of guides. \\
+        \hline
+        \textbf{Pre-Conditions} & Guide has already uploaded the packages. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Actors navigate to the guide's profile.
+            \item Actors can view the list of packages offered by the guide.
+            \item Actors can also view the guide's calendar availability.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-view-packages}
+    \caption{Use Case: View Packages and Calendar Availability}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-018\\
+        \hline
+        \textbf{Use Case Name} & View Guidance History \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin, Guide \\
+        \hline
+        \textbf{Description} & Allows Admin and Guides to view guidance history of guides. \\
+        \hline
+        \textbf{Pre-Conditions} & Guides have gone on journeys before through the system. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Actor (Admin or Guide) navigates to the guide's profile.
+            \item Actor can view detailed statistics of the guide's guidance history, including past journeys and activities.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-view-guidance-history}
+    \caption{Use Case: View Guidance History}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-019 \\
+        \hline
+        \textbf{Use Case Name} & Add Equipment \\
+        \hline
+        \textbf{Primary Actor(s)} & Rental Services \\
+        \hline
+        \textbf{Description} & Allows Rental Services to add equipment to their inventory. \\
+        \hline
+        \textbf{Pre-Conditions} & Rental Services must be registered and verified in the system. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Rental Service logs into the system.
+            \item Rental Service navigates to their inventory management section.
+            \item Rental Service selects the option to add equipment.
+            \item Rental Service provides the details of the new equipment.
+            \item Rental Service adds the new equipment to their inventory.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-add-equipment}
+    \caption{Use Case: Add Equipment}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-020 \\
+        \hline
+        \textbf{Use Case Name} & View/Search Equipment \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin, Guide, Customer, Rental Service, Guest User \\
+        \hline
+        \textbf{Description} & Allows all users to search and view equipment of any rental service with the provided filters. \\
+        \hline
+        \textbf{Pre-Conditions} & The respective rental services have added equipment. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item User navigates to the equipment search section.
+            \item User selects the rental service they wish to search within.
+            \item User applies filters based on their preferences.
+            \item User views the list of equipment matching their filters.
+            \item Alternatively, User can filter equipment-wise and directly select the equipment.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-view-search-equipment}
+    \caption{Use Case: View/Search Equipment}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-021 \\
+        \hline
+        \textbf{Use Case Name} & Update Equipment \\
+        \hline
+        \textbf{Primary Actor(s)} & Rental Service \\
+        \hline
+        \textbf{Description} & Allows rental services to update the equipment in their inventories. \\
+        \hline
+        \textbf{Pre-Conditions} & 
+        \begin{itemize}[itemsep=0pt]
+            \item Users have booked the equipment.
+            \item The rental shop decides to change the stock.
+        \end{itemize} \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item When a user books an equipment, the system automatically updates the stock of the equipment.
+            \item Rental Service logs into the system.
+            \item Rental Service navigates to their inventory management section.
+            \item Rental Service selects the equipment to update.
+            \item Rental Service modifies the stock count of the equipment.
+            \item Rental Service saves the changes to the equipment's stock.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-update-equipment}
+    \caption{Use Case: Update Equipment}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-022 \\
+        \hline
+        \textbf{Use Case Name} & Delete Equipment \\
+        \hline
+        \textbf{Primary Actor(s)} & Rental Service \\
+        \hline
+        \textbf{Description} & Allows rental services to delete equipment from their inventories. \\
+        \hline
+        \textbf{Pre-Conditions} & The respective rental services have added equipment. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Rental Service logs into the system.
+            \item Rental Service navigates to their inventory management section.
+            \item Rental Service selects the equipment to be deleted.
+            \item Rental Service confirms the deletion action.
+            \item The selected equipment is removed from the rental service's inventory.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-delete-equipment}
+    \caption{Use Case: Delete Equipment}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-023 \\
+        \hline
+        \textbf{Use Case Name} & Book Equipment \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer \\
+        \hline
+        \textbf{Description} & Allows Customers to book the equipment they want. \\
+        \hline
+        \textbf{Pre-Conditions} & The equipment must be available to book. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer navigates to the equipment selection section.
+            \item Customer selects the equipment they want to book.
+            \item Customer provides necessary booking details.
+            \item Customer pays the advance amount through the system.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The availability of the equipment is updated. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-book-equipment}
+    \caption{Use Case: Book Equipment}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-024 \\
+        \hline
+        \textbf{Use Case Name} & Book Guide \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer \\
+        \hline
+        \textbf{Description} & Allows Customers to hire the guide they want. \\
+        \hline
+        \textbf{Pre-Conditions} & The guide must be available to book. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer navigates to the guide selection section.
+            \item Customer selects the guide they want to book.
+            \item Customer provides necessary booking details.
+            \item Customer pays the advance amount through the system.
+            \item Customer receives contact details of the guide.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The calendar of the guide is updated. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-book-guide}
+    \caption{Use Case: Book Guide}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-025 \\
+        \hline
+        \textbf{Use Case Name} & Cancel Booking (Rental Service) \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer, Rental Service \\
+        \hline
+        \textbf{Description} & Allows the Customer or Rental Service to cancel their relevant booking. \\
+        \hline
+        \textbf{Pre-Conditions} & The customer must have booked equipment prior. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer navigates to their bookings section.
+            \item Customer selects the booking to be canceled.
+            \item Customer confirms the cancellation.
+            \item Rental Service receives a cancellation notification.
+            \item Rental Service confirms the cancellation.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The booking is canceled, and relevant updates are made. Relevant refunding will be done if needed. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-cancel-booking-rental-service}
+    \caption{Use Case: Cancel Booking (Rental Service)}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-026 \\
+        \hline
+        \textbf{Use Case Name} & Cancel Booking (Guide) \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer, Guide \\
+        \hline
+        \textbf{Description} & Allows the Customer or Guide to cancel their relevant booking. \\
+        \hline
+        \textbf{Pre-Conditions} & The customer must have booked the guide prior. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer navigates to their bookings section.
+            \item Customer selects the booking with the guide to be canceled.
+            \item Customer confirms the cancellation.
+            \item Guide receives a cancellation notification.
+            \item Guide confirms the cancellation.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The booking is canceled, and relevant updates are made. Relevant refunding will be done if needed. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-cancel-hire-guide}
+    \caption{Use Case: Cancel Booking (Guide)}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-027 \\
+        \hline
+        \textbf{Use Case Name} & Add Review \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer \\
+        \hline
+        \textbf{Description} & Allows the Customer to add a review for guides. \\
+        \hline
+        \textbf{Pre-Conditions} & The customer must have had gone on the respective guide before. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer navigates to the guide's profile.
+            \item Customer selects the option to add a review.
+            \item Customer provides the review text and rating.
+            \item Customer submits the review.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The review is added to the guide's profile. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-add-review}
+    \caption{Use Case: Add Review}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-028 \\
+        \hline
+        \textbf{Use Case Name} & Update Review \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer \\
+        \hline
+        \textbf{Description} & Allows the Customer to update their review for guides. \\
+        \hline
+        \textbf{Pre-Conditions} & 
+        \begin{itemize}[itemsep=0pt]
+            \item The customer must have gone on the respective guide before.
+            \item The review the customer is updating should have been uploaded by themselves.
+        \end{itemize} \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer navigates to their own review on the guide's profile.
+            \item Customer selects the option to edit the review.
+            \item Customer modifies the review text and/or rating.
+            \item Customer submits the updated review.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The review is updated on the guide's profile. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-update-review}
+    \caption{Use Case: Update Review}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-029 \\
+        \hline
+        \textbf{Use Case Name} & Delete Review \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer, Admin \\
+        \hline
+        \textbf{Description} & Allows the Customer or Admin to delete a review for guides. \\
+        \hline
+        \textbf{Pre-Conditions} & 
+        \begin{itemize}[itemsep=0pt]
+            \item The customer must have gone on the respective guide before.
+            \item The review the customer is deleting should have been uploaded by themselves.
+        \end{itemize} \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer navigates to their own review on the guide's profile.
+            \item Customer selects the option to delete the review.
+            \item Customer confirms the deletion action.
+            \item Admin logs into the system.
+            \item Admin navigates to the guide's profile.
+            \item Admin selects the option to delete a review.
+            \item Admin confirms the deletion action.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The review is deleted from the guide's profile. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-delete-review}
+    \caption{Use Case: Delete Review}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-030 \\
+        \hline
+        \textbf{Use Case Name} & View Guide Reviews \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer, Guide, Admin, Guest User, Rental Service \\
+        \hline
+        \textbf{Description} & Allows all actors to view reviews of a particular guide. \\
+        \hline
+        \textbf{Pre-Conditions} & The guide must have reviews in his profile. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Actor navigates to the guide's profile.
+            \item Actor selects the option to view reviews.
+            \item Actor can see a list of reviews given to the guide.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-view-guide-reviews}
+    \caption{Use Case: View Guide Reviews}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-031 \\
+        \hline
+        \textbf{Use Case Name} & Manage Tips and Know Hows \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin \\
+        \hline
+        \textbf{Description} & Allows the Admin to handle tips and know hows. \\
+        \hline
+        \textbf{Pre-Conditions} & 
+        \begin{itemize}[itemsep=0pt]
+            \item For deleting and updating, the tips and know hows must've been uploaded beforehand.
+        \end{itemize} \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Admin navigates to the tips and know hows management section.
+            \item Admin adds new tips and know hows to the system.
+            \item Admin selects existing tips or know hows to delete or update.
+            \item Admin confirms the deletion or update action.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & Tips and know hows are added, deleted, or updated in the system. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-manage-tips-know-hows}
+    \caption{Use Case: Manage Tips and Know Hows}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-032 \\
+        \hline
+        \textbf{Use Case Name} & View Tips and Know Hows \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer, Guide, Admin, Guest User, Rental Service \\
+        \hline
+        \textbf{Description} & Allows all actors to view tips and knowhows. \\
+        \hline
+        \textbf{Pre-Conditions} & The Admin must've added tips and knowhows beforehand. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Actor navigates to the tips and knowhows corner.
+            \item Actor selects the option to view tips and knowhows.
+            \item Actor can see the list of available tips and knowhows.
+            \item Actor can choose and view specific tips or knowhows.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & None \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-view-tips-know-hows}
+    \caption{Use Case: View Tips and Know Hows}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-033 \\
+        \hline
+        \textbf{Use Case Name} & Generate Report \\
+        \hline
+        \textbf{Primary Actor(s)} & Admin, Rental Service, Guide \\
+        \hline
+        \textbf{Description} & Allows the Admin, Rental Service, and Guide to generate a report of the selected data. \\
+        \hline
+        \textbf{Pre-Conditions} & None \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Actor navigates to the report generation section.
+            \item Actor selects the desired data and parameters for the report.
+            \item Actor generates the report.
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The selected report is generated based on the chosen data and parameters. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-generate-report}
+    \caption{Use Case: Generate Report}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-034 \\
+        \hline
+        \textbf{Use Case Name} & Confirm Pickup Equipment \\
+        \hline
+        \textbf{Primary Actor(s)} & Customer \\
+        \hline
+        \textbf{Description} & Customer makes a complaint after going to pick up the equipment from the shop. \\
+        \hline
+        \textbf{Pre-Conditions} & Customer must have booked and paid the advance of the said equipment. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer goes to the rental shop for equipment pickup.
+            \item If the customer is satisfied with the equipment:
+                \begin{enumerate}[label=\alph*.,itemsep=0pt]
+                    \item  Customer has to make the full payment + the extra debit for the equipment.
+                    \item Customer confirms the pickup and continues their journey.
+                \end{enumerate}
+            \item If the customer has complaints about the equipment:
+                \begin{enumerate}[label=\alph*.,itemsep=0pt]
+                    \item Customer records the complaint and details.
+                    \item Customer provides evidence or proof for the complaint.
+                    \item Customer uploads the complaint and evidence to the system.
+                \end{enumerate}
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The pickup is confirmed, and necessary actions are taken based on whether there are complaints or not.
+        \break The extra debit paid here will be settled in the Usecase UC-036. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-confirm-pickup-equipment}
+    \caption{Use Case: Confirm Pickup Equipment}
+\end{table}
+
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-035 \\
+        \hline
+        \textbf{Use Case Name} & Confirm Return Equipment \\
+        \hline
+        \textbf{Primary Actor(s)} & Rental Service \\
+        \hline
+        \textbf{Description} & Rental service confirms the return of the equipment after the customer returns the equipment. \\
+        \hline
+        \textbf{Pre-Conditions} & Customer must have returned the equipment. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer returns the equipment to the rental shop.
+            \item Rental service staff inspects the returned equipment.
+            \item If there are no complaints or issues:
+                \begin{enumerate}[label=\alph*.,itemsep=0pt]
+                    \item Rental service will return the extra debit paid at the pickup.
+                \end{enumerate}
+            \item If there are complaints or issues:
+                \begin{enumerate}[label=\alph*.,itemsep=0pt]
+                    \item The amount according to the policy of the rental shop will be deducted from the debit and returned to the customer.
+                    \item Rental service uploads the complaint and evidence to the system.
+                \end{enumerate}
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The return is confirmed, and necessary actions are taken based on whether there are complaints or not. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-confirm-return-equipment}
+    \caption{Use Case: Confirm Return Equipment}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{0.75\textwidth}|}
+        \hline
+        \textbf{Use Case ID} & UC-036 \\
+        \hline
+        \textbf{Use Case Name} & Refund Customer \\
+        \hline
+        \textbf{Primary Actor(s)} & Rental Service \\
+        \hline
+        \textbf{Description} & Rental service processes a refund for a customer who made a complaint when confirming pickup. \\
+        \hline
+        \textbf{Pre-Conditions} & Customer has made a complaint when confirming pickup. \\
+        \hline
+        \textbf{Main Scenarios} & 
+        \begin{enumerate}[label=\arabic*.,itemsep=0pt]
+            \item Customer makes a complaint when confirming pickup.
+            \item If the rental service acknowledges the complaint:
+                \begin{enumerate}[label=\alph*.,itemsep=0pt]
+                    \item Rental service processes the refund for the customer.
+                \end{enumerate}
+            \item If the rental service does not acknowledge the complaint:
+                \begin{enumerate}[label=\alph*.,itemsep=0pt]
+                    \item Admin is informed of the complaint.
+                    \item Admin processes the complaint and takes necessary steps.
+                    \item If the complaint is valid, admin processes the refund.
+                \end{enumerate}
+        \end{enumerate} \\
+        \hline
+        \textbf{Exceptions} & None \\
+        \hline
+        \textbf{Post-conditions} & The customer is refunded based on the validity of the complaint. \\
+        \hline
+    \end{tabular}
+    \label{tab:use-case-refund-customer}
+    \caption{Use Case: Refund Customer}
+\end{table}
+
+
+\clearpage
